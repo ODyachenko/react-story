@@ -1,0 +1,8 @@
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Mariupol';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Mariupol-Regular.woff2') format('woff2'),
+    url('../fonts/Mariupol-Regular.woff') format('woff');
+}
