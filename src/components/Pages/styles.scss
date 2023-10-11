@@ -1,0 +1,51 @@
+.page {
+  &-cover.page.--right {
+    background: url('../../assets/img/book_cover.png') no-repeat center/cover;
+  }
+  &-cover.page.--left {
+    background: url('../../assets/img/book_cover_end.png') no-repeat
+      center/cover;
+  }
+
+  &.--left {
+    background: url('../../assets/img/book_bg.png') no-repeat left;
+
+    & .page__content {
+      padding: 32px 16px 32px 45px;
+    }
+  }
+  &.--right {
+    background: url('../../assets/img/book_bg.png') no-repeat right;
+
+    & .page__content {
+      padding: 32px 45px 32px 16px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__img {
+    margin: 0 auto 16px;
+  }
+  &__text {
+    text-indent: 15px;
+    margin-bottom: 16px;
+  }
+  &__num {
+    width: 177px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../../assets/img/page_footer.png') no-repeat center/contain;
+
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}

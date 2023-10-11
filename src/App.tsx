@@ -1,5 +1,13 @@
+import { Book } from './components/Book/Book';
+import { VolumeBtn } from './UI/VolumeBtn/VolumeBtn';
+
 function App() {
-  return <div className="App">test</div>;
+  return (
+    <>
+      <Book />
+      <VolumeBtn />
+    </>
+  );
 }
 
 export default App;
