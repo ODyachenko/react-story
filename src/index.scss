@@ -2,8 +2,59 @@
 @import './assets/scss/fonts.scss';
 
 body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Mariupol', sans-serif;
   font-size: 12px;
   line-height: 1.3;
   color: #070703;
+  background: linear-gradient(180deg, #1a1305 0%, #100c03 100%);
+  overflow: hidden;
+
+  padding: 16px;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #d89b00 0%,
+      rgba(204, 147, 0, 0) 100%
+    );
+    border-radius: 50%;
+    filter: blur(12px);
+    opacity: 0.4;
+
+    position: absolute;
+    z-index: -1;
+
+    animation: rotation 2s linear infinite alternate;
+  }
+  &::before {
+    top: 100px;
+    left: -200px;
+  }
+  &::after {
+    bottom: -160px;
+    right: -160px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  padding-bottom: 64px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-15px, -15px, 0);
+  }
 }
