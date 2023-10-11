@@ -1,11 +1,11 @@
 import { Book } from './components/Book/Book';
-import { VolumeBtn } from './UI/VolumeBtn/VolumeBtn';
+import { Soundtrack } from './components/Soundtrack/Soundtrack';
 
 function App() {
   return (
     <>
       <Book />
-      <VolumeBtn />
+      <Soundtrack />
     </>
   );
 }

@@ -49,6 +49,16 @@ body {
   position: relative;
   padding-bottom: 64px;
 }
+.volume.muted {
+  & svg path {
+    &:nth-child(1) {
+      stroke: red;
+    }
+    &:not(:first-child) {
+      fill: red;
+    }
+  }
+}
 
 @keyframes rotation {
   0% {
