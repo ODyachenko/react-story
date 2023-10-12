@@ -3,7 +3,7 @@ import './styles.scss';
 
 type BtnProps = {
   direction: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const Btn: FC<BtnProps> = ({ direction, onClick }) => {
