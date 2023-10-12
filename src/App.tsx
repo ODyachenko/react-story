@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Book } from './components/Book/Book';
-import { Soundtrack } from './components/BookFooter/Soundtrack';
 import { Context } from './Context/Context';
 
 function App() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying]: React.ComponentState = useState(false);
 
   return (
     <Context.Provider

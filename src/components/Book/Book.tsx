@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useRef, useState } from 'react';
+import React, { FC, useContext, useEffect, useRef, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { BookCover } from '../BookCover/BookCover';
 import { PageList } from '../Pages/PageList';
@@ -9,9 +9,9 @@ import { BookFooter } from '../BookFooter/BookFooter';
 export const Book: FC = () => {
   const bookRef: any = useRef(null);
   const { setIsPlaying } = useContext(Context);
-  const [rangeValue, setRangeValue] = useState('100');
-  const [showSlider, setShowSlider] = useState(true);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [rangeValue, setRangeValue]: React.ComponentState = useState('100');
+  const [showSlider, setShowSlider]: React.ComponentState = useState(true);
+  const [currentPage, setCurrentPage]: React.ComponentState = useState(0);
 
   useEffect(() => {
     if (rangeValue === '0') {
@@ -28,7 +28,7 @@ export const Book: FC = () => {
     }
   }, [currentPage]);
 
-  const onFlip = (event: any) => {
+  const onFlip = (event: { data: any }) => {
     setCurrentPage(event.data);
   };
 
