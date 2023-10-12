@@ -1,13 +1,12 @@
 import { FC, useContext } from 'react';
 import { Context } from '../../Context/Context';
-import './styles.scss';
 
 export const VolumeBtn: FC = () => {
   const { isPlaying, setIsPlaying } = useContext(Context);
 
   return (
     <button
-      className={`volume ${isPlaying ? '' : 'muted'}`}
+      className={`book__soundtrack-btn ${isPlaying ? '' : 'muted'}`}
       onClick={() => setIsPlaying(!isPlaying)}
     >
       <svg

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Book } from './components/Book/Book';
-import { Soundtrack } from './components/Soundtrack/Soundtrack';
+import { Soundtrack } from './components/BookFooter/Soundtrack';
 import { Context } from './Context/Context';
 
 function App() {
@@ -14,7 +14,6 @@ function App() {
       }}
     >
       <Book />
-      <Soundtrack />
     </Context.Provider>
   );
 }

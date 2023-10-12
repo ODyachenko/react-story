@@ -7,9 +7,9 @@ export const Soundtrack: FC = () => {
   const { isPlaying } = useContext(Context);
 
   return (
-    <>
+    <div className="book__soundtrack">
       {isPlaying && <audio src={sound} autoPlay={isPlaying} loop />}
       <VolumeBtn />
-    </>
+    </div>
   );
 };

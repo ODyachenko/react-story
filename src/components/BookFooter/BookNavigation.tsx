@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Btn } from '../../UI/Btn/Btn';
-import './styles.scss';
 
 type BookNavigationProps = {
   onClickNext: () => void;

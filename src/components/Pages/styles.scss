@@ -6,20 +6,18 @@
     background: url('../../assets/img/book_cover_end.png') no-repeat
       center/cover;
   }
-
-  &.--left {
-    background: url('../../assets/img/book_bg.png') no-repeat left;
-
-    & .page__content {
-      padding: 32px 16px 32px 45px;
-    }
+  & {
+    background: linear-gradient(
+      270deg,
+      #c3bdae 0%,
+      #ddd3bf 8.43%,
+      #ebd9c5 31%,
+      #e9dac5 67%,
+      #d1ccc1 100%
+    );
   }
-  &.--right {
-    background: url('../../assets/img/book_bg.png') no-repeat right;
-
-    & .page__content {
-      padding: 32px 45px 32px 16px;
-    }
+  &__content {
+    padding: 16px;
   }
 
   &__title {
@@ -47,5 +45,24 @@
     left: 0;
     right: 0;
     margin: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    &.--left {
+      background: url('../../assets/img/book_bg.png') no-repeat left;
+
+      & .page__content {
+        padding: 32px 16px 32px 45px;
+      }
+    }
+    &.--right {
+      background: url('../../assets/img/book_bg.png') no-repeat right;
+
+      & .page__content {
+        padding: 32px 45px 32px 16px;
+      }
+    }
   }
 }
