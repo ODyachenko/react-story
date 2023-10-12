@@ -1,6 +1,9 @@
+import React from 'react';
+
 export interface Ipage {
   id: number;
   title?: string;
-  img: any;
+  img: string;
+  alt: string;
   text: string;
 }

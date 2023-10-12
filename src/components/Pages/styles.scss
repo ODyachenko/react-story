@@ -1,13 +1,9 @@
 .page {
-  // &-cover.page.--right {
-  //   background: url('../../assets/img/book_cover_mobile.png') no-repeat
-  //     center/cover;
-  // }
   &-cover.page.--right {
-    background: url('../../assets/img/book_cover.png') no-repeat center/contain;
+    background: url('../../assets/img/book_cover.webp') no-repeat center/contain;
   }
   &-cover.page.--left {
-    background: url('../../assets/img/book_cover_end.png') no-repeat
+    background: url('../../assets/img/book_cover_end.webp') no-repeat
       center/contain;
   }
   & {
@@ -62,14 +58,14 @@
 @media (min-width: 768px) {
   .page {
     &.--left {
-      background: url('../../assets/img/book_bg.png') no-repeat left;
+      background: url('../../assets/img/book_bg.webp') no-repeat left;
 
       & .page__content {
         padding: 32px 16px 32px 45px;
       }
     }
     &.--right {
-      background: url('../../assets/img/book_bg.png') no-repeat right;
+      background: url('../../assets/img/book_bg.webp') no-repeat right;
 
       & .page__content {
         padding: 32px 45px 32px 16px;
