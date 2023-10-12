@@ -41,7 +41,7 @@ export const Book: FC = () => {
           width={471}
           height={589}
           size="stretch"
-          minWidth={230}
+          minWidth={288}
           maxWidth={471}
           minHeight={428}
           maxHeight={589}
@@ -55,7 +55,7 @@ export const Book: FC = () => {
           autoSize={true}
           maxShadowOpacity={0.5}
           showCover={true}
-          mobileScrollSupport={true}
+          mobileScrollSupport={false}
           clickEventForward={false}
           useMouseEvents={false}
           swipeDistance={0}
