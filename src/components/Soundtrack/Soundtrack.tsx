@@ -1,36 +1,15 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useContext } from 'react';
+import { Context } from '../../Context/Context';
 import { VolumeBtn } from '../../UI/VolumeBtn/VolumeBtn';
 import sound from '../../assets/media/sunrise.mp3';
 
 export const Soundtrack: FC = () => {
-  const [isMuted, setIsMuted] = useState(false);
-  const audio = new Audio(sound);
-  audio.loop = !isMuted;
-
-  useEffect(() => {
-    document.documentElement.addEventListener('click', function () {
-      audio.loop = !isMuted;
-      audio.play();
-    });
-  }, []);
-
-  const onClick = () => {
-    audio.loop = true;
-    if (isMuted) {
-      audio.loop = true;
-      audio.muted = false;
-      audio.play();
-      setIsMuted(false);
-    } else {
-      audio.loop = false;
-      audio.muted = true;
-      setIsMuted(true);
-    }
-  };
+  const { isPlaying } = useContext(Context);
 
   return (
     <>
-      <VolumeBtn onClick={onClick} isMuted={isMuted} />
+      {isPlaying && <audio src={sound} autoPlay={isPlaying} loop />}
+      <VolumeBtn />
     </>
   );
 };

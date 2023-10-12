@@ -1,12 +1,14 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useContext, useEffect, useRef, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { BookCover } from '../BookCover/BookCover';
 import { BookNavigation } from '../BookNavigation/BookNavigation';
 import { PageList } from '../Pages/PageList';
 import { StartsSlider } from '../StartsSlider/StartsSlider';
+import { Context } from '../../Context/Context';
 
 export const Book: FC = () => {
   const bookRef: any = useRef(null);
+  const { setIsPlaying } = useContext(Context);
   const [rangeValue, setRangeValue] = useState('100');
   const [showSlider, setShowSlider] = useState(true);
   const [bookOptions, setBookOptions] = useState({
@@ -19,6 +21,7 @@ export const Book: FC = () => {
     if (rangeValue === '0') {
       bookRef.current.pageFlip().flipNext();
       setShowSlider(false);
+      setIsPlaying(true);
     }
   }, [rangeValue]);
 

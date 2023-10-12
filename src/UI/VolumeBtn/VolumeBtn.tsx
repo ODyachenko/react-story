@@ -1,14 +1,15 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { Context } from '../../Context/Context';
 import './styles.scss';
 
-type VolumeBtnProp = {
-  onClick: () => void;
-  isMuted: boolean;
-};
+export const VolumeBtn: FC = () => {
+  const { isPlaying, setIsPlaying } = useContext(Context);
 
-export const VolumeBtn: FC<VolumeBtnProp> = ({ onClick, isMuted }) => {
   return (
-    <button className={`volume ${isMuted ? 'muted' : ''}`} onClick={onClick}>
+    <button
+      className={`volume ${isPlaying ? '' : 'muted'}`}
+      onClick={() => setIsPlaying(!isPlaying)}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
