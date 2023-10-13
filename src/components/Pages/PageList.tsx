@@ -54,12 +54,14 @@ const pageData: Ipage[] = [
   },
 ];
 
-export const PageList = React.forwardRef((props: any, ref: any) => {
-  return (
-    <div className="page__list">
-      {pageData.map((page) => (
-        <Page key={page.id} {...page} ref={ref} />
-      ))}
-    </div>
-  );
-});
+export const PageList = React.forwardRef(
+  (props: React.RefAttributes<unknown>, ref: React.Ref<any>) => {
+    return (
+      <div className="page__list">
+        {pageData.map((page) => (
+          <Page key={page.id} {...page} ref={ref} />
+        ))}
+      </div>
+    );
+  }
+);

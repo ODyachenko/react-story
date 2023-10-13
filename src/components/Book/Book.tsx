@@ -9,27 +9,32 @@ import { BookFooter } from '../BookFooter/BookFooter';
 export const Book: FC = () => {
   const bookRef: any = useRef(null);
   const { setIsPlaying } = useContext(Context);
-  const [rangeValue, setRangeValue]: React.ComponentState = useState('100');
-  const [showSlider, setShowSlider]: React.ComponentState = useState(true);
-  const [currentPage, setCurrentPage]: React.ComponentState = useState(0);
+  const [bookOptions, setBookOptions]: React.ComponentState = useState({
+    rangeValue: '100',
+    showSlider: true,
+    currentPage: 0,
+  });
 
   useEffect(() => {
-    if (rangeValue === '0') {
-      bookRef.current.pageFlip().flipNext();
-      setShowSlider(false);
+    if (bookOptions.rangeValue === '0') {
+      bookRef.current?.pageFlip().flipNext();
+      setBookOptions({ ...bookOptions, showSlider: false });
       setIsPlaying(true);
     }
-  }, [rangeValue]);
+  }, [bookOptions.rangeValue]);
 
   useEffect(() => {
-    if (currentPage === 0) {
-      setRangeValue('100');
-      setShowSlider(true);
+    if (bookOptions.currentPage === 0) {
+      setBookOptions({ ...bookOptions, rangeValue: '100', showSlider: true });
     }
-  }, [currentPage]);
+  }, [bookOptions.currentPage]);
 
   const onFlip = (event: { data: any }) => {
-    setCurrentPage(event.data);
+    setBookOptions({ ...bookOptions, currentPage: event.data });
+  };
+
+  const setRangeValue = (value: string) => {
+    setBookOptions({ ...bookOptions, rangeValue: value });
   };
 
   return (
@@ -66,12 +71,12 @@ export const Book: FC = () => {
           <PageList />
           <BookCover />
           <StartsSlider
-            showSlider={showSlider}
-            rangeValue={rangeValue}
+            showSlider={bookOptions.showSlider}
+            rangeValue={bookOptions.rangeValue}
             setRangeValue={setRangeValue}
           />
         </HTMLFlipBook>
-        {!!currentPage && <BookFooter bookRef={bookRef} />}
+        {!!bookOptions.currentPage && <BookFooter bookRef={bookRef} />}
       </div>
     </main>
   );

@@ -69,7 +69,7 @@ body {
   body {
     &::before,
     &::after {
-      animation: rotation 2s linear infinite alternate;
+      animation: rotation 3s linear infinite alternate;
     }
   }
 }
@@ -79,6 +79,6 @@ body {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-15px, -15px, 0);
+    transform: translate3d(-25px, -25px, 0);
   }
 }

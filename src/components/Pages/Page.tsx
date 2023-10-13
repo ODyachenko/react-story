@@ -3,7 +3,7 @@ import { Ipage } from '../../../types';
 import './styles.scss';
 
 export const Page = React.forwardRef(
-  ({ title, text, img, alt, id }: Ipage, ref: any) => {
+  ({ title, text, img, alt, id }: Ipage, ref: React.Ref<any>) => {
     return (
       <div className="page" ref={ref}>
         <div className="page__content">

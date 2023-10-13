@@ -1,14 +1,17 @@
-import React, { FC } from 'react';
+import React from 'react';
 import './styles.scss';
 
 type StartsSliderProps = {
   showSlider: boolean;
   rangeValue: string;
-  setRangeValue: (event: any) => void;
+  setRangeValue: (event: string) => void;
 };
 
 export const StartsSlider = React.forwardRef(
-  ({ showSlider, rangeValue, setRangeValue }: StartsSliderProps, ref: any) => {
+  (
+    { showSlider, rangeValue, setRangeValue }: StartsSliderProps,
+    ref: React.Ref<any>
+  ) => {
     return (
       <div className={`content ${showSlider ? 'show' : ''}`}>
         <span className="start__endpoint">

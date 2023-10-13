@@ -1,9 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-export const BookCover = React.forwardRef((props: any, ref: any) => {
-  return (
-    <>
-      <div className="page page-cover" ref={ref} data-density="hard"></div>
-    </>
-  );
-});
+export const BookCover = React.forwardRef(
+  (props: React.RefAttributes<unknown>, ref: React.Ref<any>) => {
+    return (
+      <>
+        <div className="page page-cover" ref={ref} data-density="hard"></div>
+      </>
+    );
+  }
+);
